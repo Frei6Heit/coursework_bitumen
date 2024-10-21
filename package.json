@@ -1,9 +1,17 @@
 {
   "dependencies": {
+    "axios": "^1.7.7",
+    "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "curl": "^0.1.4",
     "express": "^4.21.1",
     "jsonwebtoken": "^9.0.2",
-    "mssql": "^11.0.1"
+    "mssql": "^11.0.1",
+    "odbc": "^2.4.9",
+    "odbc-pool": "^0.0.7",
+    "react-router-dom": "^6.27.0",
+    "soap": "^1.1.5"
   }
 }

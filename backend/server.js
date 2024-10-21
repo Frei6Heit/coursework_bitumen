@@ -1,23 +1,38 @@
-const express = require('express');
-const sql = require('mssql');
-const config = require('./config');
-
+// подключение express
+import express from "express";
+// подключаем модуль SOAP
+import soap from "soap";
+// создаем объект приложения
 const app = express();
-const port = 3000;
 
-app.use(express.json());
+// определяем обработчик для маршрута "/"
+app.get("/", function(request, response){
+     
+	// определяем в переменные URL адрес веб-сервиса 1С, переменные для авторизации, переменные для выполнения пользовательской функции
+	let url = 'http://localhost:59000/exchange',
+		args = {'RequestDATA':[{'PARAMETER': "VALUE"}]},
+		auth = "Basic " + Buffer.from("LOGIN" + ":" + "PASSWORD").toString("base64");
 
-app.get('/api/data', async (req, res) => {
-  try {
-    await sql.connect(config);
-    const result = await sql.query`SELECT * FROM your_table`;
-    res.json(result.recordset);
-  } catch (err) {
-    console.error(err);
-    res.status(500).send('Ошибка при получении данных');
-  }
+	let client = soap.createClient(url, { wsdl_headers: { Authorization: auth } }, (err, client) => {
+		client.setSecurity(new soap.BasicAuthSecurity("LOGIN","PASSWORD"))
+		if (err) {
+			throw err;
+		} else {
+			// обращаемся к нашей пользовательской функции GetSettings
+			client.GetSettings(args, function(err, result) {
+				// получаем данные и работаем с ними дальше
+				console.log(result);
+				return;
+			});
+		}
+	});
+	return;
+
 });
 
+const port = 3001;
+
+// Запускаем сервер
 app.listen(port, () => {
-  console.log(`Сервер запущен на http://localhost:${port}`);
+    console.log(`Server is running on http://localhost:${port}`);
 });
