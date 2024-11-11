@@ -1,26 +1,21 @@
-import { useState, useEffect } from 'react';
-import Form from 'react-bootstrap/Form';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import Model from './pages/Model';
+import NotFound from './pages/NotFound';
 import './App.css';
- 
+
+
 function App() {
-  const [todoItems, setTodoItems] = useState([]);
- 
-  useEffect(() => {
-    fetch('http://localhost:3010/api/todo-items')
-      .then((res) => res.json())
-      .then((result) => setTodoItems(result.data));
-  }, []);
- 
   return (
-    <div>
-      {todoItems.map((item) => (
-        <Form.Group key={item.id} className="app__todo-item">
-          <Form.Check type="checkbox" checked={item.done} />
-          <Form.Control type="text" value={item.text} />
-        </Form.Group>
-      ))}
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/model" element={<Model />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Router>
   );
 }
- 
+
 export default App;

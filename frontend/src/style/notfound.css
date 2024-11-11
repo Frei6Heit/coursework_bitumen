@@ -1,0 +1,20 @@
+.background {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white
+} 
+
+.text {
+    width: 900px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: gainsboro;
+    background-image: gradient(black,black, white, white);
+}

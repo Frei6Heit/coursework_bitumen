@@ -7,10 +7,17 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.3.3",
+    "gsap": "^3.12.5",
+    "jquery": "^3.7.1",
+    "parallax-js": "^3.1.0",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.4",
     "react-dom": "^18.3.1",
+    "react-parallax": "^3.5.1",
+    "react-router-dom": "^6.28.0",
     "react-scripts": "^5.0.1",
+    "react-type-animation": "^3.2.0",
+    "sass": "^1.80.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -36,5 +43,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "pug": "^2.0.4",
+    "pug-loader": "^2.4.0",
+    "react-app-rewired": "^2.2.1",
+    "stylus": "^0.64.0",
+    "stylus-loader": "^8.1.1"
   }
 }
