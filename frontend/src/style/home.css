@@ -1,0 +1,35 @@
+.model-text {
+
+
+    padding: 100px 0 0 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    
+}
+
+.photo_model {
+    width: 300px;
+}
+
+.question {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 500px;
+    background-color: white;
+    border-radius: 15px;
+    /* padding: 10px 30px; */
+    color: black;
+}
+
+.question span a {
+    color: red;
+    text-decoration: none;
+}
+
+.question span a:hover {
+    color: black;
+}

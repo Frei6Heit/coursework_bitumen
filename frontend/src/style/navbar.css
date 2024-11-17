@@ -309,4 +309,30 @@
     width: 10px;
   }
   
+
+  .glass-container {
+    position: relative;
+    /* background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover; Пример фонового изображения */
+  }
+  
+  .glass-content {
+    background: rgba(255, 255, 255, 0.1); /* Полупрозрачный белый фон */
+    backdrop-filter: blur(30px); /* Размытие фона */
+    border-radius: 15px; /* Скругление углов */
+    padding: 30px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень для объема */
+    width: 100%;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  h1, p {
+    margin: 0;
+    padding: 10px;
+  }
+  
   /* inspired by https://dribbble.com/shots/6396442-Micro-Interaction-Search-Bar-Menu */

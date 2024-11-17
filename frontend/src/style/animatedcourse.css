@@ -1,0 +1,23 @@
+.curve-container {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black; /* Для контраста */
+  }
+  
+  .curve path {
+    stroke-dasharray: 2000; /* Длина линии (уточнить через браузер) */
+    stroke-dashoffset: 2000; /* Линия полностью скрыта */
+    transition: stroke-dashoffset 2s ease-in-out;
+  }
+  
+  .curve-visible path {
+    stroke-dashoffset: 0; /* Линия становится видимой */
+  }
+  
+
+.block {
+    height: 2000px;
+}
