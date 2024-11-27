@@ -90,47 +90,6 @@
   margin-bottom: 50px;
 }
 
-.photo {
-  /* width: 300px; */
-  border-radius: 20px;
-  /* margin: 0px 60px 0px 20px; */
-}
-
-.photo:nth-child(3),
-.photo:nth-child(4) {
-  /* width: 200px; */
-  transform: rotate(90deg);
-}
-.block-1 {
-  width: auto;
-  height: auto;
-}
-
-.photo:nth-child(1) {
-  width: 300px;
-  margin: 0px 40px 0px 0px;
-}
-
-.photo:nth-child(2) {
-  width: 160px;
-  margin: -220px 0 0 0px;
-}
-
-.photo:nth-child(3) {
-  width: 200px;
-  margin: 300px 0 0 -120px;
-}
-
-.photo:nth-child(4) {
-  width: 200px;
-  margin: -220px 0 0 0;
-}
-
-.photo:nth-child(5) {
-  width: 200px;
-  margin: -220px 0 0 0;
-}
-
 .text-in-photo {
   width: 350px;
   height: 200px;
@@ -148,20 +107,25 @@
   margin-top: 300px;
   width: 100%;
   height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 
 /* CSS */
-.button-86 {
-  margin: -400px 0 0 700px;
+.button {
+  /* margin-top: -500px; */
+  /* margin: -400px 0 0 700px; */
   all: unset;
-  width: 300px;
+  width: 200px;
   height: 100px;
-  font-size: 16px;
+  font-size: 25px;
   background: transparent;
   border: none;
   position: relative;
-  color: #f0f0f0;
+  color: black;
+  font-weight: bold;
   cursor: pointer;
   z-index: 1;
   padding: 10px 20px;
@@ -174,8 +138,12 @@
   touch-action: manipulation;
 }
 
-.button-86::after,
-.button-86::before {
+a {
+  text-decoration: none !important;
+}
+
+.button::after,
+.button::before {
   content: '';
   position: absolute;
   bottom: 0;
@@ -184,15 +152,15 @@
   transition: all .4s;
 }
 
-.button-86::before {
+.button::before {
   transform: translate(0%, 0%);
   width: 100%;
   height: 100%;
-  background: #28282d;
+  background: gainsboro;
   border-radius: 10px;
 }
 
-.button-86::after {
+.button::after {
   transform: translate(10px, 10px);
   width: 35px;
   height: 35px;
@@ -202,20 +170,20 @@
   border-radius: 50px;
 }
 
-.button-86:hover::before {
+.button:hover::before {
   transform: translate(5%, 20%);
   width: 110%;
   height: 110%;
 }
 
-.button-86:hover::after {
+.button:hover::after {
   border-radius: 10px;
   transform: translate(0, 0);
   width: 100%;
   height: 100%;
 }
 
-.button-86:active::after {
+.button:active::after {
   transition: 0s;
   transform: translate(0, 5%);
 }

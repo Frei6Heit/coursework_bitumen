@@ -1,0 +1,15 @@
+.content-button {
+    width: 630px;
+    align-items: center;
+    text-align-last: center;
+}
+
+.margin-button {
+    margin-bottom: 70px;
+}
+
+.text {
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-weight: bold;
+}

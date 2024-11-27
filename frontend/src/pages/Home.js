@@ -183,11 +183,7 @@
 
 import React from "react";
 import "../style/home.css";
-import calinBlack from "../image/caliningrad_black.png";
-import colBlack from "../image/colpino-black.png";
-import eletsColor from "../image/elets-color.png";
-import salscColor from "../image/salsc-color.png";
-import taldColor from "../image/taldom-color.png";
+import photo from "../image/photo_bottom.png";
 // import tumenColor from "../image/tumen-color.png";
 // import yassiBlack from "../image/yassi-black.png";
 // import yassiColor from "../image/yassi-color.png";
@@ -209,50 +205,44 @@ const InfiniteLines = () => {
 
   return (
     <>
-    <div className="home-content">
-      {/* <h1>Генератор</h1> */}
-      <div className="center-block">
-        <span>
-          Модель LoRA для генерации строительных схем с размещением битумных
-          материалов. Она создаёт точные схемы, на которых отображены участки
-          для укладки битума, с учётом их расположения и масштаба. Эта
-          технология значительно ускоряет процесс проектирования, помогая
-          оптимизировать работу подразделений бригады, сокращая время на
-          подготовку и планирование. Идеально подходит для инфраструктурных
-          объектов, таких как дорожные покрытия или кровельные работы.
-        </span>
-      </div>
-      <div className="line-container">
-        {lines.map((line, index) => (
-          <div
-            key={index}
-            className="line"
-            style={{
-              width: `${line.width}%`,
-              top: `${line.top}%`,
-              backgroundColor: index % 2 === 0 ? "white" : "blue", // Чёрный для нечётных, синий для чётных
-              animationDelay: `${index * 1}s`,
-            }}
-          ></div>
-        ))}
-      </div>
-      
-    </div>
-    <div className="photo-block">
-        <div className="block-1">
-          <img alt="photo_1" src={calinBlack} className="photo" />
-          <img alt="photo_3" src={colBlack} className="photo" />
-          <img alt="photo_3" src={eletsColor} className="photo" />
-          <img alt="photo_4" src={salscColor} className="photo" />
-          <button class="button-86" href='/model' style={}>Сгенерировать</button>
-          <img alt="photo_5" src={taldColor} className="photo" />
-
+      <div className="home-content">
+        {/* <h1>Генератор</h1> */}
+        <div className="center-block">
+          <span>
+            Модель LoRA для генерации строительных схем с размещением битумных
+            материалов. Она создаёт точные схемы, на которых отображены участки
+            для укладки битума, с учётом их расположения и масштаба. Эта
+            технология значительно ускоряет процесс проектирования, помогая
+            оптимизировать работу подразделений бригады, сокращая время на
+            подготовку и планирование. Идеально подходит для инфраструктурных
+            объектов, таких как дорожные покрытия или кровельные работы.
+          </span>
         </div>
-
-        {/* <img src={tumenColor} className="photo"/> */}
+        <div className="line-container">
+          {lines.map((line, index) => (
+            <div
+              key={index}
+              className="line"
+              style={{
+                width: `${line.width}%`,
+                top: `${line.top}%`,
+                backgroundColor: index % 2 === 0 ? "white" : "blue", // Чёрный для нечётных, синий для чётных
+                animationDelay: `${index * 1}s`,
+              }}
+            ></div>
+          ))}
+        </div>
+      </div>
+      <div className="photo-block">
+        <img src={photo} className="photo" alt="photo_bottom" />
         {/* <img src={yassiBlack} className="photo"/> */}
         {/* <img src={yassiColor} className="photo"/> */}
       </div>
+      <a href="/model">
+        <button className="button" style={{ marginTop: "-500px" }}>
+          Перейти
+        </button>
+      </a>
     </>
   );
 };
