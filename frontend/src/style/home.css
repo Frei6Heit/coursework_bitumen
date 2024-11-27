@@ -1,4 +1,4 @@
-.model-text {
+/* .model-text {
 
 
     padding: 100px 0 0 0;
@@ -21,7 +21,7 @@
     width: 500px;
     background-color: white;
     border-radius: 15px;
-    /* padding: 10px 30px; */
+    padding: 10px 30px;
     color: black;
 }
 
@@ -32,4 +32,190 @@
 
 .question span a:hover {
     color: black;
+}
+
+.test {
+    height: 6000px;
+    background-color: red;
+} */
+
+/* ------ линии */
+
+.home-content {
+  width: 100%;
+  position: relative;
+  /* width: 100%; */
+  height: auto; /* Высота контейнера - вся высота экрана */
+  /* background-color: #f0f0f0;  */
+}
+
+.line-container {
+  position: relative;
+  width: 100%;
+  height: 500px; /* Высота контейнера - вся высота экрана */
+  background-color: none; /* Цвет фона */
+}
+
+.line {
+  position: absolute;
+  height: 5px; /* Толщина линии */
+  transform: translateX(-100%); /* Начальная позиция */
+  animation: move-line 6s linear infinite; /* Анимация движения */
+}
+
+@keyframes move-line {
+  from {
+    transform: translateX(-100%); /* Линия начинает за пределами слева */
+  }
+  to {
+    transform: translateX(100vw); /* Линия уходит за пределы справа */
+  }
+}
+
+.center-block {
+  width: 800px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Центрирование по вертикали и горизонтали */
+  z-index: 1; /* Обеспечивает, чтобы блок был поверх линий */
+  padding: 20px 30px;
+  background-color: black; /* Полупрозрачный фон */
+  border-radius: 10px;
+  /* text-align: center; */
+  font-size: 20px;
+  margin-bottom: 50px;
+}
+
+.photo {
+  /* width: 300px; */
+  border-radius: 20px;
+  /* margin: 0px 60px 0px 20px; */
+}
+
+.photo:nth-child(3),
+.photo:nth-child(4) {
+  /* width: 200px; */
+  transform: rotate(90deg);
+}
+.block-1 {
+  width: auto;
+  height: auto;
+}
+
+.photo:nth-child(1) {
+  width: 300px;
+  margin: 0px 40px 0px 0px;
+}
+
+.photo:nth-child(2) {
+  width: 160px;
+  margin: -220px 0 0 0px;
+}
+
+.photo:nth-child(3) {
+  width: 200px;
+  margin: 300px 0 0 -120px;
+}
+
+.photo:nth-child(4) {
+  width: 200px;
+  margin: -220px 0 0 0;
+}
+
+.photo:nth-child(5) {
+  width: 200px;
+  margin: -220px 0 0 0;
+}
+
+.text-in-photo {
+  width: 350px;
+  height: 200px;
+  background-color: red;
+  border-radius: 20px;
+  align-content: center;
+  text-align: center;
+  margin: -262px 0 0 700px;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: 'Train One';
+}
+
+.photo-block {
+  margin-top: 300px;
+  width: 100%;
+  height: auto;
+}
+
+
+/* CSS */
+.button-86 {
+  margin: -400px 0 0 700px;
+  all: unset;
+  width: 300px;
+  height: 100px;
+  font-size: 16px;
+  background: transparent;
+  border: none;
+  position: relative;
+  color: #f0f0f0;
+  cursor: pointer;
+  z-index: 1;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-86::after,
+.button-86::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -99999;
+  transition: all .4s;
+}
+
+.button-86::before {
+  transform: translate(0%, 0%);
+  width: 100%;
+  height: 100%;
+  background: #28282d;
+  border-radius: 10px;
+}
+
+.button-86::after {
+  transform: translate(10px, 10px);
+  width: 35px;
+  height: 35px;
+  background: #ffffff15;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 50px;
+}
+
+.button-86:hover::before {
+  transform: translate(5%, 20%);
+  width: 110%;
+  height: 110%;
+}
+
+.button-86:hover::after {
+  border-radius: 10px;
+  transform: translate(0, 0);
+  width: 100%;
+  height: 100%;
+}
+
+.button-86:active::after {
+  transition: 0s;
+  transform: translate(0, 5%);
 }
