@@ -1,0 +1,68 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.button {
+  margin: 5px;
+  width: 200px;
+  height: 50px;
+  border-radius: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid rgb(136, 136, 219);
+  background-color: white;
+  color: black;
+}
+
+.button.active {
+  background-color: rgb(136, 136, 219);
+  color: white;
+  border-color: white;
+}
+
+.selectedValues {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.generateButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(136, 136, 219);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.generateButton:hover {
+  background-color: rgb(110, 110, 190);
+}
+
+
+
