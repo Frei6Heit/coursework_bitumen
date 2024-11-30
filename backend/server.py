@@ -53,8 +53,6 @@ def generate_image():
         image = pipe(prompt).images[0]  # Генерируем изображение с помощью модели
         print("Image generated successfully")
 
-        # Показываем изображение для отладки
-
         # Конвертируем изображение в base64
         buffered = BytesIO()
         image.save(buffered, format="PNG")  # Сохраняем изображение в буфер

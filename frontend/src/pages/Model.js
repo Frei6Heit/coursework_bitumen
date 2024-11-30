@@ -217,7 +217,7 @@ const DynamicButtons = () => {
       {renderButtonGroup("500м3", "param9")}
       {renderButtonGroup("100м3", "param10")}
       {renderButtonGroup("50м3", "param11")}
-      {renderButtonGroup("75м3", "param12")}
+      {renderButtonGroup("Резервуар вертикальный стальной(здесь и ниже)/75м3", "param12")}
       {renderButtonGroup("60м3", "param13")}
       {renderButtonGroup("50м3", "param14")}
       <div className={styles.section}>
