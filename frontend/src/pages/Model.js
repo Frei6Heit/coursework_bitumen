@@ -3,6 +3,7 @@ import axios from "axios";
 import styles from "../style/DynamicButtons.module.css";
 
 const DynamicButtons = () => {
+  // Переменная для объявления параметров модели
   const [buttonsData, setButtonsData] = useState({
     param1: [
       {
@@ -25,60 +26,201 @@ const DynamicButtons = () => {
       },
     ],
     param2: [
-      { id: 4, text: "4", value: "production 4 things", isActive: false },
-      { id: 5, text: "3", value: "production 3 things", isActive: false },
-      { id: 6, text: "2", value: "production 2 things", isActive: false },
+      { 
+        id: 4,
+        text: "4", 
+        value: "production 4 things", 
+        isActive: false 
+      },
+      { 
+        id: 5, 
+        text: "3", 
+        value: "production 3 things", 
+        isActive: false 
+      },
+      { 
+        id: 6, 
+        text: "2", 
+        value: "production 2 things", 
+        isActive: false 
+      },
     ],
     param3: [
-      { id: 7, text: "4", value: "VST V=10000m3 4 things", isActive: false },
-      { id: 8, text: "2", value: "VST V=10000m3 2 things", isActive: false },
+      { 
+        id: 7, 
+        text: "4", 
+        value: "VST V=10000m3 4 things", 
+        isActive: false 
+      },
+      { 
+        id: 8, 
+        text: "2", 
+        value: "VST V=10000m3 2 things", 
+        isActive: false 
+      },
     ],
     param4: [
-      { id: 9, text: "2", value: "VST V=5000m3 2 things", isActive: false },
-      { id: 10, text: "1", value: "VST V=5000m3 1 things", isActive: false },
+      { 
+        id: 9, 
+        text: "2", 
+        value: "VST V=5000m3 2 things", 
+        isActive: false 
+      },
+      { 
+        id: 10, 
+        text: "1", 
+        value: "VST V=5000m3 1 things", 
+        isActive: false 
+      },
     ],
     param5: [
-      { id: 11, text: "4", value: "VST V=4500m3 4 things", isActive: false },
-      { id: 12, text: "2", value: "VST V=4500m3 2 things", isActive: false },
+      { 
+        id: 11, 
+        text: "4", 
+        value: "VST V=4500m3 4 things", 
+        isActive: false 
+      },
+      { 
+        id: 12, 
+        text: "2", 
+        value: "VST V=4500m3 2 things", 
+        isActive: false 
+      },
     ],
     param6: [
-      { id: 13, text: "4", value: "VST V=3000m3 4 things", isActive: false },
+      { 
+        id: 13, 
+        text: "4", 
+        value: "VST V=3000m3 4 things", 
+        isActive: false 
+      },
     ],
     param7: [
-      { id: 14, text: "6", value: "VST V=2000m3 6 things", isActive: false },
+      { 
+        id: 14, 
+        text: "6", 
+        value: "VST V=2000m3 6 things", 
+        isActive: false 
+      },
     ],
     param8: [
-      { id: 15, text: "6", value: "VST V=1000m3 6 things", isActive: false },
-      { id: 16, text: "4", value: "VST V=1000m3 4 things", isActive: false },
-      { id: 17, text: "3", value: "VST V=1000m3 3 things", isActive: false },
-      { id: 18, text: "2", value: "VST V=1000m3 2 things", isActive: false },
+      { 
+        id: 15, 
+        text: "6", 
+        value: "VST V=1000m3 6 things", 
+        isActive: false 
+      },
+      { 
+        id: 16, 
+        text: "4", 
+        value: "VST V=1000m3 4 things", 
+        isActive: false 
+      },
+      { 
+        id: 17, 
+        text: "3", 
+        value: "VST V=1000m3 3 things", 
+        isActive: false 
+      },
+      { 
+        id: 18, 
+        text: "2", 
+        value: "VST V=1000m3 2 things", 
+        isActive: false 
+      },
     ],
     param9: [
-      { id: 19, text: "6", value: "VST V=500m3 6 things", isActive: false },
-      { id: 20, text: "4", value: "VST V=500m3 4 things", isActive: false },
-      { id: 21, text: "2", value: "VST V=500m3 2 things", isActive: false },
+      { 
+        id: 19, 
+        text: "6", 
+        value: "VST V=500m3 6 things", 
+        isActive: false 
+      },
+      { 
+        id: 20, 
+        text: "4", 
+        value: "VST V=500m3 4 things", 
+        isActive: false 
+      },
+      { 
+        id: 21, 
+        text: "2", 
+        value: "VST V=500m3 2 things", 
+        isActive: false 
+      },
     ],
     param10: [
-      { id: 22, text: "8", value: "VST V=100m3 8 things", isActive: false },
-      { id: 23, text: "5", value: "VST V=100m3 5 things", isActive: false },
+      { 
+        id: 22, 
+        text: "8", 
+        value: "VST V=100m3 8 things", 
+        isActive: false 
+      },
+      { 
+        id: 23, 
+        text: "5", 
+        value: "VST V=100m3 5 things", 
+        isActive: false 
+      },
     ],
     param11: [
-      { id: 24, text: "10", value: "VST V=50m3 10 things", isActive: false },
-      { id: 25, text: "5", value: "VST V=50m3 5 things", isActive: false },
-      { id: 26, text: "2", value: "VST V=50m3 2 things", isActive: false },
+      { 
+        id: 24, 
+        text: "10", 
+        value: "VST V=50m3 10 things", 
+        isActive: false 
+      },
+      { 
+        id: 25, 
+        text: "5", 
+        value: "VST V=50m3 5 things", 
+        isActive: false 
+      },
+      { 
+        id: 26, 
+        text: "2", 
+        value: "VST V=50m3 2 things", 
+        isActive: false 
+      },
     ],
     param12: [
-      { id: 27, text: "8", value: "HST V=75m3 8 things", isActive: false },
-      { id: 28, text: "5", value: "HST V=75m3 5 things", isActive: false },
+      { 
+        id: 27, 
+        text: "8", 
+        value: "HST V=75m3 8 things", 
+        isActive: false 
+      },
+      { 
+        id: 28, 
+        text: "5", 
+        value: "HST V=75m3 5 things", 
+        isActive: false 
+      },
     ],
     param13: [
-      { id: 29, text: "6", value: "HST V=60m3 6 things", isActive: false },
+      { 
+        id: 29, 
+        text: "6", 
+        value: "HST V=60m3 6 things", 
+        isActive: false 
+      },
     ],
     param14: [
-      { id: 30, text: "8", value: "HST V=50m3 8 things", isActive: false },
-      { id: 31, text: "4", value: "HST V=50m3 4 things", isActive: false },
+      { 
+        id: 30, 
+        text: "8", 
+        value: "HST V=50m3 8 things", 
+        isActive: false 
+      },
+      { 
+        id: 31, 
+        text: "4", 
+        value: "HST V=50m3 4 things", 
+        isActive: false 
+      },
     ],
   });
+  // Отслеживание активности переменных
 
   const [selectedValues, setSelectedValues] = useState([]);
   const [error, setError] = useState("");
@@ -151,7 +293,7 @@ const DynamicButtons = () => {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:5000/api/generate-image",
+        "http://127.0.0.1:5000/api/generate-image",  // Адрес сервера
         payload,
         {
           headers: { "Content-Type": "application/json" },
@@ -197,13 +339,16 @@ const DynamicButtons = () => {
     <div className={styles.container}>
       <p className={styles.title}>Выберите параметры</p>
       <button onClick={toggleAllButtons} className={styles.generateButton}>
-        {Object.values(buttonsData).every((param) =>
+        {Object.values(buttonsData).every((param) =>    // Кнопка активации
           param.every((button) => button.isActive)
         )
           ? "Деактивировать все"
           : "Активировать все"}
       </button>
-      {renderButtonGroup("Здания администрации и офисы", "param1")}
+
+      {/* Объявление параметров и их загаловков */}
+
+      {renderButtonGroup("Здания администрации и офисы", "param1")}   
       {renderButtonGroup("Здания производства", "param2")}
       {renderButtonGroup(
         "Резервуар вертикальный стальной(здесь и ниже)/10000м3",
@@ -217,14 +362,23 @@ const DynamicButtons = () => {
       {renderButtonGroup("500м3", "param9")}
       {renderButtonGroup("100м3", "param10")}
       {renderButtonGroup("50м3", "param11")}
-      {renderButtonGroup("Резервуар вертикальный стальной(здесь и ниже)/75м3", "param12")}
+      {renderButtonGroup(
+        "Резервуар вертикальный стальной(здесь и ниже)/75м3",
+        "param12"
+      )}
       {renderButtonGroup("60м3", "param13")}
       {renderButtonGroup("50м3", "param14")}
+
+      {/* Генерация */}
+
       <div className={styles.section}>
         <button onClick={handleGenerate} className={styles.generateButton}>
           {loading ? "Подождите..." : "Сгенерировать"}
         </button>
-        <button onClick={toggleAllButtons} className={styles.generateButtonActivate}>
+        <button
+          onClick={toggleAllButtons}
+          className={styles.generateButtonActivate}
+        >
           {Object.values(buttonsData).every((param) =>
             param.every((button) => button.isActive)
           )
@@ -232,6 +386,9 @@ const DynamicButtons = () => {
             : "Активировать все"}
         </button>
         {error && <p className={styles.error}>{error}</p>}
+
+        {/* Вывод картинки */}
+        
         {generatedImage && (
           <div>
             <img src={generatedImage} alt="Generated" />

@@ -17,21 +17,21 @@ base_model = "runwayml/stable-diffusion-v1-5"
 
 # Загрузка пайплайна
 try:
-    print("Loading base model...")
+    print("Базовая модель загрузки...")
     pipe = StableDiffusionPipeline.from_pretrained(base_model, torch_dtype=torch.float16)
     pipe.to("cuda")  # Используйте GPU
-    print("Base model loaded successfully.")
+    print("Базовая загрузка прошла успешно.")
 except Exception as e:
-    print(f"Error loading base model: {e}")
+    print(f"Ошиька в базовой загрузки модели: {e}")
 
 # Загрузка LoRA модели
 lora_weights = "courseworkmodel.safetensors"
 try:
-    print("Loading LoRA model...")
+    print("Загрузка LoRA модели...")
     state_dict = load_file(lora_weights)
-    print("LoRA model loaded successfully.")
+    print("LoRA модель успешно загружена.")
 except Exception as e:
-    print(f"Error loading LoRA model: {e}")
+    print(f"Ошибка загрузки LoRA модели: {e}")
 
 # Применение LoRA к модели
 for key, value in state_dict.items():
@@ -40,18 +40,18 @@ for key, value in state_dict.items():
 
 @app.route('/api/generate-image', methods=['POST'])
 def generate_image():
-    print("Request received")  # Логирование входящего запроса
+    print("Запрос получен")  # Логирование входящего запроса
     data = request.get_json()  # Получаем данные как JSON
     prompt = data.get('prompt')  # Получаем prompt
 
     if not prompt:
-        print("No prompt received")
-        return jsonify({'error': 'Prompt is required'}), 400
+        print("Запрос не получен")
+        return jsonify({'error': 'Требуется запрос'}), 400
 
     try:
-        print(f"Generating image with prompt: {prompt}")
+        print(f"Генерирование изображения на основе запроса: {prompt}")
         image = pipe(prompt).images[0]  # Генерируем изображение с помощью модели
-        print("Image generated successfully")
+        print("Изображение успешно сгенерировано!")
 
         # Конвертируем изображение в base64
         buffered = BytesIO()
@@ -61,9 +61,9 @@ def generate_image():
         return jsonify({'image': img_str})  # Отправляем изображение обратно в формате base64
 
     except Exception as e:
-        print(f"Error during image generation: {e}")
+        print(f"Ошибка при создании изображения: {e}")
         traceback.print_exc()  # Выведет стек вызовов
-        return jsonify({'error': 'Failed to generate image'}), 500
+        return jsonify({'error': 'Ошибка генерации'}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)  # Стандартный Flask WSGI сервер
